@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LifeStory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body ondblclick="changeBackgroundColor()">
+  <div id="mainContent">
+    <button id="signInBtn" onclick="toggleLogin()">Sign In</button>
+    <div id="loginFields" style="display: none;">
+      <input type="email" id="email" placeholder="Enter email" />
+      <input type="password" id="password" placeholder="Enter password" />
+      <button onclick="signIn()">Submit</button>
+    </div>
+
+    <div class="tip">🎯 Tips: Try typing "happy birthday", "house", "gun", "creeper", or write a happy/sad/funny story</div>
+
+    <h1>LifeStory</h1>
+    <textarea id="storyInput" placeholder="Write your life story here..."></textarea>
+    <button onclick="submitStory()">Submit</button>
+
+    <div id="history"></div>
+  </div>
+
+  <div id="animationOverlay" class="hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
