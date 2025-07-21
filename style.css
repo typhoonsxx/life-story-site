@@ -1,77 +1,124 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: white;
+/* Reset some basic styles */
+* {
   margin: 0;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  font-size: 48px;
-  color: #4285f4;
-  margin-top: 60px;
+/* Body and background */
+body {
+  background: #f2f2f2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-#storyInput {
-  width: 60%;
-  height: 140px;
-  font-size: 18px;
-  margin-top: 20px;
-  padding: 10px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 15px;
+/* Sign In button */
+#signin-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #4285f4;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-#signInBtn {
+/* Tips top-right */
+#tips {
   position: absolute;
   top: 15px;
-  left: 20px;
+  right: 15px;
+  font-size: 14px;
+  color: #777;
 }
 
-#loginFields {
-  position: absolute;
-  top: 50px;
-  left: 20px;
-  background: #f1f3f4;
-  padding: 10px;
-  border-radius: 6px;
+/* Container for everything */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 100px;
+  text-align: center;
 }
 
-.tip {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  color: #d93025;
-  font-weight: bold;
-}
-
-#history {
-  margin-top: 30px;
+/* Story input field */
+textarea {
+  width: 100%;
+  max-width: 600px;
+  min-height: 120px;
+  padding: 15px;
   font-size: 16px;
-  text-align: left;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
 }
 
-#animationOverlay {
+/* Submit button */
+button.submit-story {
+  margin-top: 15px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #0f9d58;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Reaction output */
+#reaction {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+/* Full-screen animation container */
+.fullscreen-animation {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: white;
   width: 100vw;
   height: 100vh;
-  font-size: 120px;
+  background: white;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  font-size: 40px;
+  animation: popin 0.6s ease;
 }
 
-#animationOverlay.hidden {
-  display: none;
+/* Animation for pop */
+@keyframes popin {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Media query for smaller screens (phones) */
+@media screen and (max-width: 600px) {
+  textarea {
+    font-size: 14px;
+    padding: 10px;
+    max-width: 90vw;
+  }
+
+  button.submit-story {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  #signin-button, #tips {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
 }
